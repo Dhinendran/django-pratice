@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page-header">
+    <h1>
+        {{title}}
+    </h1>
+</div>
+<div class="row">
+    <div class="col-md-9">
+        <div class="tab-content">
+            {% for article in articles %}
+            <div id="{{ article.id }}" class="tab-pane fade
+            {% if forloop.counter0 == 0 %}
+            in active
+            {% endif %}">
+            <h3>{{ article.title}}</h3>
+            <p>{{ article.content}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            {% for article in articles %}
+            <li 
+            {% if forloop.counter0 == 0 %} 
+            class="active"
+            {% endif %}>
+                <a data-toggle="pill" href="#{{article.id}}">{{article.title}}</a>
+            </li>
+            {% endfor %}`
+        </ul>
+    </div>
+</div>
+{% endblock %}
