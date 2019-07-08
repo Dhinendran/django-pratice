@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block header %}
+<h1>Home page</h1>
+<hr width="1250" align"left" size="4">
+{% endblock header %}
+{% block content %}
+<div class="link-to-blogs">
+    <h2>
+        <a href="{% url 'post_list' %}">Blog>></a>
+    </h2>
+
+</div>
+{% endblock content%}
+{% block footer %}
+<div class="date">
+    <hr width="1250" align"left" size="4">
+    <p><h2>{{ date }}</h2></p>
+
+</div>
+{% endblock footer %}

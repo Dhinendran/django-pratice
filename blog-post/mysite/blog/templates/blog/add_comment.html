@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+
+
+{% block content %}
+<h2>New Comment</h2>
+<form method="POST" class="post-form">{% csrf_token %}
+    <fieldset>
+        <h4>Name:</h4>
+        <input type="text" name="name" id="name"/><br><br>
+        <h4>Comment</h4>
+        <textarea name="comment" id="commet"></textarea><br><br>
+        <button type="submit" class="save btn-default">send</button>
+    </fieldset>
+</form>
+<div class="start-page-link-2">
+    <a href="{% url 'index' %}"><h3><< Home page</h3></a>
+</div>
+ 
+{% endblock content %}

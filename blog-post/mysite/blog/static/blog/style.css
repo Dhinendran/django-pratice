@@ -1,0 +1,29 @@
+h1 a, h1, h2 a, h2,h3 {
+    color: darkslategray;
+}
+body{
+    padding-top:30px;
+    padding-left: 15px;
+}
+hr {
+    height: 2px;
+    color: darkslategray;
+    background-color: darkslategray;
+    border: none;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding-left: 15px;
+}
+
+.link-to-blogs{
+    padding-top: 350px;
+}
+.form{
+    width: 300px;
+}
