@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <h1>{{form.errors}}</h1>
+    
+    <form action="{% url 'contact' %}" method="post">
+
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="submit-link-row">{{ field.label_tag}}<br>{{field}}</div>
+            {% if form.errors %}
+                {% for error in field.errors %}
+                <p class="error-message">
+                    <strong>{{ error|escape }}</strong>
+                </p>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+        <button id="submit" name="submit" class="btn btn-primary" value="1">Submit</button>
+        <a href="{% url 'clear' %}" id="clear" name="clear" class="btn btn-default">Clear</a>
+    </form>
+
+    </div>
+<div class="col-lg-2"></div>
+</div>
